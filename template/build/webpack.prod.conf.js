@@ -46,6 +46,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         // you can customize output by editing /index.html
         // see https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
+            // chunks: ['vendor', 'polyfill', 'app'],
             filename: process.env.NODE_ENV === 'testing' ?
                 'index.html' :
                 config.build.index,
