@@ -1,4 +1,14 @@
+/* eslint-disable */
+
 module.exports = {
+    "globals": {
+        "$": true,
+        "_": true,
+        "window": true,
+        "document": true,
+        "navigator": true,
+        "Vue": true
+    },
     env: {
         es6: true,
         mocha: true,
@@ -6,7 +16,7 @@ module.exports = {
     },
     extends: ['eslint:recommended', 'plugin:sort-class-members/recommended'],
     parser: 'babel-eslint',
-    plugins: ['babel', 'sort-class-members'],
+    plugins: ['vue', 'babel', 'sort-class-members', 'html'],
     root: true,
     rules: {
         'accessor-pairs': 'error', // 强制 getter 和 setter 在对象中成对出现
@@ -39,7 +49,7 @@ module.exports = {
         }],
         'generator-star-spacing': 'off', // 强制 generator 函数中 * 号周围使用一致的空格
         'id-length': ['error', { // 强制标识符的最新和最大长度
-            exceptions: ['_', 'e', 'i', '$']
+            exceptions: ['_', 'e', 'i', '$', 'h']
         }],
         indent: ['error', 4, { // 强制使用一致的缩进
             SwitchCase: 1
@@ -107,10 +117,10 @@ module.exports = {
         'no-new-object': 'error', // 禁止使用 Object 的构造函数
         'no-new-require': 'error', // 禁止调用 require 时使用 new 操作符
         'no-new-wrappers': 'error', // 禁止对 String，Number 和 Boolean 使用 new 操作符
-        'no-new': 'error', // 禁止在非赋值或条件语句中使用 new 操作符
+        'no-new': 'off', // 禁止在非赋值或条件语句中使用 new 操作符
         'no-octal-escape': 'error', // 禁止在字符串中使用八进制转义序列
         'no-path-concat': 'error', // 禁止对 __dirname 和 __filename进行字符串连接
-        'no-process-env': 'error', // 禁用 process.env
+        'no-process-env': 'off', // 禁用 process.env
         'no-process-exit': 'error', // 禁用 process.exit()
         'no-proto': 'error', // 禁用 __proto__ 属性
         'no-restricted-modules': 'error', // 禁用指定的通过 require 加载的模块
@@ -165,9 +175,9 @@ module.exports = {
         'space-infix-ops': 'off',
         'space-unary-ops': 'off',
         'spaced-comment': 'off',
-        'sort-imports': 'off', // 强制模块内的 import 排序],
+        'sort-imports': 0, // 强制模块内的 import 排序],
         strict: 'off',
-        'valid-jsdoc': 'error', // 强制使用有效的 JSDoc 注释
+        'valid-jsdoc': 'off', // 强制使用有效的 JSDoc 注释
         'vars-on-top': 'off',
         yoda: 'off',
         'wrap-iife': 'off',
