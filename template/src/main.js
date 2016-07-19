@@ -34,8 +34,9 @@ router.map({
 sync(store, router)
 
 router.beforeEach(transition => {
+    var scrollTop = document.body.scrollTop
     if (transition.from.path) {
-        ls.set(transition.from.path, document.body.scrollTop)
+        ls.set(transition.from.path, scrollTop)
     }
     store.dispatch('GLOBAL_PROGRESS', 30)
     transition.next()
