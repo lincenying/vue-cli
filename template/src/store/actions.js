@@ -1,6 +1,5 @@
 /* global window, document */
 
-import { ssp } from '../tools/command'
 import * as types from './mutation-types'
 
 export const gLoadding = ({dispatch}, status) => {
@@ -9,7 +8,6 @@ export const gLoadding = ({dispatch}, status) => {
 
 export const gProgress = ({dispatch, state: {route: {path}}}, num) => {
     dispatch(types.GLOBAL_PROGRESS, num)
-    ssp(path, num)
 }
 
 export const showMsg = ({dispatch}, content, type = 'error') => {

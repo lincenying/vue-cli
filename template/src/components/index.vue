@@ -8,7 +8,7 @@
     export default {
         vuex: {
             getters: {
-                article: ({article}) => article
+                globals: ({global}) => global
             },
             actions: vuexAction
         },
